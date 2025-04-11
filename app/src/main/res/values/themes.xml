@@ -1,0 +1,64 @@
+<resources>
+    <!-- 基本主题 -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/nav_selector</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorSecondary">@color/colorPrimary</item>
+        <item name="colorOnSecondary">#FFFFFF</item>
+        <item name="colorOnBackground">#333333</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:navigationBarColor">@color/white</item>
+    </style>
+
+    <!-- Tab 标签 -->
+    <style name="TabActive">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#FF4081</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TabInactive">
+        <item name="android:textColor">#999999</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!-- 卡片样式 -->
+    <style name="CardSummary">
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:radius">20dp</item>
+        <item name="android:elevation">2dp</item>
+        <item name="android:background">#F9A7C3</item>
+    </style>
+
+    <!-- 快捷菜单图标 -->
+    <style name="QuickIconStyle">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+    </style>
+
+    <!-- RecyclerView item 样式 -->
+    <style name="ItemDetail">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:background">#FFFFFF</item>
+        <item name="android:elevation">2dp</item>
+        <item name="android:radius">8dp</item>
+    </style>
+
+    <style name="ShapeAppearance.App.CornerSize50" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+
+</resources>

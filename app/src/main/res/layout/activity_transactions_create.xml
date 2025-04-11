@@ -1,0 +1,87 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/add_bill_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_bg"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- 收支切换 -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabIndicatorColor="@color/pink"
+        app:tabTextColor="@color/text_gray"
+        app:tabSelectedTextColor="@color/pink"
+        app:tabMode="fixed"
+        app:tabGravity="fill" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_category"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="12dp"
+        android:overScrollMode="never"
+        android:paddingHorizontal="8dp" />
+
+    <!-- 金额输入 -->
+    <EditText
+        android:id="@+id/et_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="输入金额"
+        android:gravity="center"
+        android:textSize="28sp"
+        android:inputType="numberDecimal"
+        android:background="@android:color/transparent"
+        android:textColor="@color/text_dark"
+        android:padding="16dp" />
+
+    <!-- 时间选择 -->
+    <LinearLayout
+        android:id="@+id/ll_date_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingTop="8dp">
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/text_dark" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_dark" />
+    </LinearLayout>
+
+    <!-- 备注 -->
+    <EditText
+        android:id="@+id/et_remark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="备注（可选）"
+        android:maxLines="3"
+        android:minLines="2"
+        android:background="@drawable/bg_input"
+        android:padding="12dp"
+        android:layout_marginTop="12dp" />
+
+    <!-- 提交按钮 -->
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:text="记一笔"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@color/pink"
+        android:background="@drawable/bg_round_button" />
+</LinearLayout>

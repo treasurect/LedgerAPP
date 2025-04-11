@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">记账本</string>
+
+    <!-- 顶部 -->
+    <string name="book_name_default">默认账本 ▼</string>
+
+    <!-- 标签栏 -->
+    <string name="tab_balance">本月结余</string>
+    <string name="tab_net_assets">净资产</string>
+    <string name="tab_budget">预算概览</string>
+
+    <!-- 卡片信息 -->
+    <string name="label_month_balance">本月结余（元）</string>
+    <string name="sample_balance_value">-44.00</string>
+
+    <!-- 快捷菜单 -->
+    <string name="quick_auto_record">自动记账</string>
+    <string name="quick_template">记账模板</string>
+    <string name="quick_assets">资产管理</string>
+    <string name="quick_transfer">转账记录</string>
+    <string name="quick_budget">预算设置</string>
+    <string name="quick_export">导出报表</string>
+
+    <string name="nav_summary">账单</string>
+    <string name="nav_transactions">明细</string>
+    <string name="nav_ai">AI记账</string>
+    <string name="nav_assets">资产</string>
+    <string name="nav_mine">我的</string>
+
+    <string name="transactions_detail">收支明细</string>
+    <string name="all_transactions_detail">全部收支明细</string>
+    <string name="recently_transactions_detail">最近收支明细</string>
+</resources>
