@@ -30,4 +30,5 @@
     <string name="transactions_detail">收支明细</string>
     <string name="all_transactions_detail">全部收支明细</string>
     <string name="recently_transactions_detail">最近收支明细</string>
+    <string name="asset_icon">资产图标</string>
 </resources>

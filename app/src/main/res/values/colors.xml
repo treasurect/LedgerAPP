@@ -17,4 +17,5 @@
     <color name="text_dark">#212121</color>
     <color name="input_bg">#FFFFFFFF</color>
     <color name="input_border">#E0E0E0</color>
+    <color name="card_stroke">#FFE1E1E1</color>
 </resources>

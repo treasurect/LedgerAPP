@@ -1,0 +1,7 @@
+
+[submodule "basic"]
+	path = basic
+	url = https://github.com/treasurect/basic.git
+[submodule "business"]
+	path = business
+	url = https://github.com/treasurect/business.git

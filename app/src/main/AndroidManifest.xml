@@ -13,8 +13,11 @@
         android:theme="@style/AppTheme"
         tools:targetApi="31">
         <activity
-            android:name=".transactions.TransactionsCreateActivity"
+            android:name=".func.transactions.TransactionsCreateActivity"
             android:exported="false" />
+        <activity
+            android:name=".func.MainActivity"
+            android:exported="true" />
         <activity
             android:name=".SplashActivity"
             android:exported="true">
@@ -24,9 +27,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="true" />
     </application>
 
 </manifest>

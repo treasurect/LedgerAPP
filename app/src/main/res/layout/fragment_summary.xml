@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".page_main.SummaryFragment">
+    tools:context=".func.summary.SummaryFragment">
     <!-- 顶部栏：账本、日历、搜索 -->
     <TextView
         android:id="@+id/tv_book_name"

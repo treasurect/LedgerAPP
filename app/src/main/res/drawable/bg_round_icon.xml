@@ -1,0 +1,5 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#3AFF4081" /> <!-- 设置背景颜色，可以自定义 -->
+    <corners android:radius="50dp" /> <!-- 设置圆角为50%，使其成为圆形 -->
+    <size android:width="50dp" android:height="50dp" /> <!-- 设置圆形的大小 -->
+</shape>

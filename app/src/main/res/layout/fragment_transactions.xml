@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_marginHorizontal="16dp"
-    tools:context=".page_main.SummaryFragment">
+    tools:context=".func.summary.SummaryFragment">
 
     <TextView
         android:layout_width="wrap_content"
