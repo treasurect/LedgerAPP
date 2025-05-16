@@ -10,9 +10,11 @@ import android.widget.EditText
 import android.widget.RadioGroup
 import android.widget.TextView
 import androidx.fragment.app.DialogFragment
+import com.treasure.basic.utils.SpUtils
 import com.treasure.basic.utils.ToastUtils
 import com.treasure.ledger.R
 import com.treasure.ledger.data.entity.AssetEntity
+import com.treasure.ledger.utils.Constants
 
 
 class AssetInsertDialogFragment(private val onAssetAdded: (AssetEntity) -> Unit) : DialogFragment() {
@@ -40,7 +42,8 @@ class AssetInsertDialogFragment(private val onAssetAdded: (AssetEntity) -> Unit)
                     R.id.rb_recharge -> "recharge"
                     else -> ""
                 }
-                val asset = AssetEntity(section = selSections, name = name, amount = amount, iconRes = R.drawable.ic_assets)
+                val uid = SpUtils.getString(Constants.KEY_SP_LOGIN_UID)
+                val asset = AssetEntity(uid = uid, section = selSections, name = name, amount = amount, iconRes = R.drawable.ic_assets)
                 onAssetAdded(asset)
                 dismiss()
             } else {

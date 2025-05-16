@@ -12,6 +12,6 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "NewBusiness"
+rootProject.name = "LedgerAPP"
 include ':app'
 include ':basic',':business'

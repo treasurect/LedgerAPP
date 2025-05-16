@@ -1,5 +1,6 @@
 package com.treasure.ledger.func.mine
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import com.treasure.basic.utils.ToastUtils
 import com.treasure.ledger.BaseFragment
 import com.treasure.ledger.R
 import com.treasure.ledger.databinding.FragmentMineBinding
+import com.treasure.ledger.func.login.LoginActivity
 
 class MineFragment : BaseFragment() {
     private lateinit var binding: FragmentMineBinding
@@ -32,7 +34,9 @@ class MineFragment : BaseFragment() {
 
         binding.btnLogout.setOnClickListener {
             viewModel.logout()
-            activity?.let { ToastUtils.show(it, "已退出登录") }
+            activity?.let {
+                startActivity(Intent(it,LoginActivity::class.java))
+                ToastUtils.show(it, "已退出登录") }
         }
     }
 

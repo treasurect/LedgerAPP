@@ -6,6 +6,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "assets")
 data class AssetEntity(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
+    val uid: String,
     val section: String, // 栏目类型：bank->银行卡、payment->三方支付、recharge->充值卡
     val name: String,
     val amount: Double,

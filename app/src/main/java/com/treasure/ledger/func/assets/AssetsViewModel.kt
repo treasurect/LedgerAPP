@@ -4,15 +4,16 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import com.treasure.basic.utils.SpUtils
 import com.treasure.ledger.data.AppDatabase
 import com.treasure.ledger.data.entity.AssetEntity
-import com.treasure.ledger.data.respository.AssetRepository
+import com.treasure.ledger.data.db.AssetsRepository
+import com.treasure.ledger.utils.Constants
 import kotlinx.coroutines.launch
 
 class AssetsViewModel(application: Application) : AndroidViewModel(application) {
 
     private val db = AppDatabase.getInstance(application)
-    private val repository = AssetRepository(db.assetDao())
 
     // 分组展示的结构：节标题 + 内容项
     val assetListLiveData = MutableLiveData<MutableList<AssetItem>>()
@@ -24,7 +25,7 @@ class AssetsViewModel(application: Application) : AndroidViewModel(application) 
     // 加载数据库中所有数据，并分组整理
     fun refreshAssets() {
         viewModelScope.launch {
-            val all = repository.getAllAssets()
+            val all = AssetsRepository.getInstance().getAllAssets(SpUtils.getString(Constants.KEY_SP_LOGIN_UID))
             val grouped = all.groupBy { it.section }
             val result = mutableListOf<AssetItem>()
             grouped.forEach { (section, assets) ->
@@ -39,12 +40,13 @@ class AssetsViewModel(application: Application) : AndroidViewModel(application) 
 
     // 插入新资产并刷新
     fun insertAsset(section: String, name: String, amount: Double, iconRes: Int) {
-        insertAsset(AssetEntity(section = section, name = name, amount = amount, iconRes = iconRes))
+        val uid = SpUtils.getString(Constants.KEY_SP_LOGIN_UID)
+        insertAsset(AssetEntity(uid = uid, section = section, name = name, amount = amount, iconRes = iconRes))
     }
 
     fun insertAsset(assetEntity: AssetEntity) {
         viewModelScope.launch {
-            repository.insertAsset(assetEntity)
+            AssetsRepository.getInstance().insertAsset(assetEntity)
             refreshAssets()
         }
     }

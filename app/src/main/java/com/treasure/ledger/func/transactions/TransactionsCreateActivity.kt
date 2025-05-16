@@ -4,10 +4,12 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.android.material.tabs.TabLayout
+import com.treasure.basic.utils.SpUtils
 import com.treasure.ledger.BaseActivity
 import com.treasure.ledger.R
 import com.treasure.ledger.data.entity.TransactionEntity
 import com.treasure.ledger.databinding.ActivityTransactionsCreateBinding
+import com.treasure.ledger.utils.Constants
 
 class TransactionsCreateActivity : BaseActivity() {
     private val viewModel: TransactionsCreateViewModel by viewModels()
@@ -31,7 +33,8 @@ class TransactionsCreateActivity : BaseActivity() {
             if (selectedCategory == null || amount.isEmpty()) {
                 return@setOnClickListener
             }
-            TransactionEntity(amount = amount.toDoubleOrNull() ?: 0.0, type = selectedCategory?.type?:"", category = selectedCategory?.name?:"", remark = remark).let {
+            val uid = SpUtils.getString(Constants.KEY_SP_LOGIN_UID)
+            TransactionEntity(uid = uid, amount = amount.toDoubleOrNull() ?: 0.0, type = selectedCategory?.type?:"", category = selectedCategory?.name?:"", remark = remark).let {
                 viewModel.addTransaction(it)
             }
             com.treasure.basic.utils.ToastUtils.show(this,"记账成功")
